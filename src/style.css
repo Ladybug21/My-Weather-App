@@ -66,6 +66,24 @@ div {
   font-size: 15px;
 }
 
+.weather-temperature img {
+  margin-top: -20px;
+  height: 30px;
+  width: 30px;
+}
+
+.weather-temperature strong {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.units {
+  position: relative;
+  top: -10px;
+  padding-left: -30px;
+  font-size: 16px;
+}
+
 .grid {
   background: transparent;
   display: inline-block;
