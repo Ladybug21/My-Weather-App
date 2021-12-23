@@ -109,3 +109,5 @@ function displayPosition(position) {
 
 let button = document.querySelector("#current-location-button");
 button.addEventListener("click", getCurrentLocation);
+
+enterCity("Denver");

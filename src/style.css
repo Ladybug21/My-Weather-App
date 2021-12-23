@@ -26,13 +26,13 @@ h2 {
 h3 {
   text-align: center;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 h4 {
   text-align: center;
   color: white;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 400;
 }
 
@@ -75,7 +75,7 @@ div {
 }
 
 .weather-temperature img {
-  margin-top: -20px;
+  margin-top: -10px;
   height: 30px;
   width: 30px;
 }
@@ -83,6 +83,7 @@ div {
 .weather-temperature strong {
   font-size: 40px;
   font-weight: 400;
+  text-align: center;
 }
 
 .units a {
@@ -91,7 +92,7 @@ div {
 }
 
 .units a.active {
-   color: black;
+  color: black;
   cursor: default;
 }
 
