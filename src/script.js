@@ -55,6 +55,12 @@ function showTemperature(response) {
   weatherDescription.innerHTML = `${currentWeatherDescription}`;
 
   celsiusTemperature = response.data.main.temp;
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function searchSubmit(event) {
