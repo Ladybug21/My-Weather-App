@@ -27,6 +27,7 @@ h3 {
   text-align: center;
   color: white;
   font-size: 18px;
+  padding: -60px 20px;
 }
 
 h4 {
@@ -64,18 +65,18 @@ div {
   background: transparent;
   border: 4px solid #05336b;
   display: inline-block;
-  border-radius: 50%;
+  border-radius: 100%;
   margin: 0% 40%;
   width: 250px;
   height: 250px;
   text-align: center;
-  padding: 70px 3px 0 3px;
+  padding: 80px 3px 0 3px;
   color: white;
-  font-size: 15px;
+  font-size: 10px;
 }
 
 .weather-temperature img {
-  margin-top: -10px;
+  margin-top: 0px;
   height: 30px;
   width: 30px;
 }
@@ -100,18 +101,23 @@ div {
   position: relative;
   top: -10px;
   padding-left: -20px;
-  font-size: 16px;
+  font-size: 12px;
 }
 
-.grid {
+.weather-forecast {
   background: transparent;
   display: inline-block;
   border: 4px solid #05336b;
   margin: 0% -150%;
-  width: 800px;
-  height: 175px;
+  width: 600px;
+  height: 135px;
   text-align: center;
   padding: 15px 3px 3px 3px;
+  color: #05336b;
+}
+
+.weather-forecast-temperature {
+  background: transparent;
   color: #05336b;
 }
 
@@ -120,6 +126,8 @@ div {
 }
 
 .footer {
-  padding: 50px;
+  display: inline-block;
+  text-align: center;
+  padding: 0px 3px 0 3px;
   color: #1277cc;
 }
