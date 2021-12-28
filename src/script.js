@@ -14,6 +14,31 @@ if (minutes < 10) {
 let h3 = document.querySelector("h3");
 h3.innerHTML = `${day}, ${month}/${date}, ${hour}:${minutes}`;
 
+//Forecast
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+     <div class="col-2">
+          <div class="weather-forecast-date">${day}</div>
+              <img src= "http://openweathermap.org/img/wn/02d@2x.png" alt="" width="36"/>
+          <div class="weather-forecast-temperature">
+              <span class="weather-forecast-temperature-max">63°|</span>
+              <span class="weather-forecast-temperature-min">37°</span>
+            </div>
+          </div>
+      `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //Search City
 function enterCity(event) {
   event.preventDefault();
@@ -33,30 +58,27 @@ form.addEventListener("submit", enterCity);
 
 //Show Temperature
 function showTemperature(response) {
-  console.log(response.data);
-  console.log(response.data.main.temp);
   let temperature = Math.round(response.data.main.temp);
-
   let city = document.querySelector("h4");
-  city.innerHTML = `${temperature}°`;
+  let weatherDescription = document.querySelector("#description");
+  let humidityButton = document.querySelector("#humidity");
+  let windButton = document.querySelector("#wind");
   let h1 = document.querySelector("h1");
-  h1.innerHTML = response.data.name;
+  let iconElement = document.querySelector("#icon");
 
   let humidity = Math.round(response.data.main.humidity);
-  let humidityButton = document.querySelector("#humidity");
-  humidityButton.innerHTML = `Humidity: ${humidity}%`;
-
   let windSpeed = Math.round(response.data.wind.speed);
-  let windButton = document.querySelector("#wind");
-  windButton.innerHTML = `Wind: ${windSpeed} MPH`;
-
   let currentWeatherDescription = response.data.weather[0].description;
-  let weatherDescription = document.querySelector("#description");
-  weatherDescription.innerHTML = `${currentWeatherDescription}`;
+
+  displayForecast();
 
   celsiusTemperature = response.data.main.temp;
 
-  let iconElement = document.querySelector("#icon");
+  city.innerHTML = `${temperature}°`;
+  h1.innerHTML = response.data.name;
+  humidityButton.innerHTML = `Humidity: ${humidity}%`;
+  windButton.innerHTML = `Wind: ${windSpeed} MPH`;
+  weatherDescription.innerHTML = `${currentWeatherDescription}`;
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -110,4 +132,4 @@ function displayPosition(position) {
 let button = document.querySelector("#current-location-button");
 button.addEventListener("click", getCurrentLocation);
 
-enterCity("Denver");
+submitCity("Denver");
