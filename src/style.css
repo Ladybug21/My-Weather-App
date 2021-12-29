@@ -5,6 +5,16 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
+.weather-app {
+  padding: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+}
+
+.btn {
+  background-color: #05336b;
+  color: white;
+}
 
 form {
   text-align: left;
@@ -25,8 +35,8 @@ h2 {
 
 h3 {
   text-align: center;
-  color: white;
-  font-size: 18px;
+  color: #05336b;
+  font-size: 20px;
   padding: -60px 20px;
 }
 

@@ -24,54 +24,56 @@
 
   </head>
   <body>
- <div class="container">
-			<form>
-        <input type="city"
-        placeholder="Enter City"
-        autocomplete="off"
-        id="submit-city"
-      /> 
-      <input type="submit" value="Search">
-      </form>
-            <button
-          type="button";
-          class="btn current-location-button btn-secondary"
-          id="current-location-button">
-        Current Location
-    </button>
-      <script src="src/index.js"></script>
-      </br>
-      <h1 id="displayCity">Denver</h1>
+    <div class="container">
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <form id="search-form" class="mb-3">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Enter city.."
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn w-100"
+                />
+              </div>
+            </div>
+          </form>
+          <div class="overview">
+      <h1 id="city"></h1>
       <h2>        
-          <span id ="humidity"> Humidity: 0% </span>
-          <div id="wind"> Wind: 7 MPH </div> 
+          <span id ="humidity"> Humidity: % </span>
+          <div id="wind"> Wind:  MPH </div> 
       </h2> 
-       <div class="circle">  
-			<h3> Wed 6:00
+       <div class="circle" id="date-time">  
+			<h3> 
       </h3> 
       <div class="circle-txt">
-       
-        <div class="clearfix weather-temperature">
-        <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" 
-        alt="Sunny" 
+       <div class="clearfix weather-temperature">
+        <img src="" 
+        alt="" 
         id="icon"/>
        </div> 
        <h4>
-         <strong>55°</strong>
+         <strong id="temp"></strong>
+         <span class="units">°F</span>
        </h4>
        <div class="temperature">
-          <span class="temp" id ="temp"></span>
-          <span class="units">
-            <a href="#" id ="celsius" class="active">°C |</a>
-            <a href ="#" id ="fahrenheit">°F</a>
-          </span>
-       <h5 id="description"> Clear </br>     
+       <h5 id="description"></br>     
        </h5>
           <div class="current-date" id="current-date"></div>              
         </div>
       </div>
-      <br></br>
-	
+      <br>
+	    <br></br>
       <div class="weather-forecast" id="forecast"></div>
 
       <p>
