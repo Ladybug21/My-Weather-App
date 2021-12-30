@@ -14,7 +14,7 @@ let month = now.getMonth();
 let hour = now.getHours();
 hour = hour % 12;
 hour = hour ? hour : 12;
-ampm = hour >= 12 ? "am" : "pm";
+let ampm = hour >= 12 ? "pm" : "am";
 
 let minutes = now.getMinutes();
 if (minutes < 10) {
@@ -76,10 +76,7 @@ function displayTemperature(response) {
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-
-  let dateElement = document.querySelector("#current-date");
   let iconElement = document.querySelector("#icon");
-
   let humidity = Math.round(response.data.main.humidity);
   let windSpeed = Math.round(response.data.wind.speed);
   let currentWeatherDescription = response.data.weather[0].description;
@@ -92,14 +89,12 @@ function displayTemperature(response) {
   getForecast(response.data.coord);
 
   fahrenheitTemperature = response.data.main.temp;
-
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = `Humidity: ${humidity}%`;
   windElement.innerHTML = `Wind: ${windSpeed} MPH`;
-  weatherDescription.innerHTML = `${currentWeatherDescription}`;
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  description.innerHTML = `${currentWeatherDescription}`;
 }
 
 function search(city) {
