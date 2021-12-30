@@ -12,15 +12,17 @@ let day = days[now.getDay()];
 let date = now.getDate();
 let month = now.getMonth();
 let hour = now.getHours();
-if (hour < 10) {
-  hour = `0${hour}`;
-}
+hour = hour % 12;
+hour = hour ? hour : 12;
+ampm = hour >= 12 ? "am" : "pm";
+
 let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
+
 let h3 = document.querySelector("h3");
-h3.innerHTML = `${day}  ${hour}:${minutes}`;
+h3.innerHTML = `${day}  ${hour}:${minutes}` + " " + ampm;
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
